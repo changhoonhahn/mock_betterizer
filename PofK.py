@@ -62,12 +62,15 @@ class Fcode:
         # compile command for fortran code. Quadruple codes have more
         # complex compile commands specified by Roman 
         if self.type == 'fft': 
-            compile_cmd = ' '.join([
-                'ifort -fast -o ',
+            compile_cmd = ' '.join([ 
+                'ifort -fast -o ', 
                 fort_exe, 
                 self.code, 
                 '-L/usr/local/fftw3_intel_s/lib/ -lfftw3f'
                 ])
+
+                #' -L/usr/local/fftw_intel_s/lib -lsrfftw -lsfftw'
+
         elif self.type == 'plk': 
             compile_cmd = ' '.join([
                 'ifort -fast -o', 
@@ -287,5 +290,5 @@ class PofK(object):
 
 
 
-#if __name__=='__main__':
-#    blah = PofK("/home/users/mv1003/catalog/PT_WNz0.562.dat", space='real', obs_axis=None, Lbox=2500, Ngrid=960, Nbin=480)
+if __name__=='__main__':
+    blah = PofK("/home/users/mv1003/catalog/PT_WNz0.562.dat", space='real', obs_axis=None, Lbox=2500, Ngrid=960, Nbin=480)

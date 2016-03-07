@@ -23,7 +23,8 @@ class Fcode:
         self.type = type    # FFT plk  pkmu
         self.call_dict = call_dict
         # fortran code directory 
-        fcode_dir = '/home/users/hahn/projects/mock_betterizer/fortran/'
+        fcode_dir = os.path.dirname(os.path.realpath(__file__))+'/fortran/'
+        #fcode_dir = '/home/users/hahn/projects/mock_betterizer/fortran/'
 
         if type == 'fft':                   # fft code
             f_name = 'zmapFFTil4_aniso_gen.f'
@@ -291,4 +292,5 @@ class PofK(object):
 
 
 if __name__=='__main__':
-    blah = PofK("/home/users/mv1003/catalog/PT_WNz0.562.dat", space='real', obs_axis=None, Lbox=2500, Ngrid=960, Nbin=480)
+    Fcode('fft', {})
+    #blah = PofK("/home/users/mv1003/catalog/PT_WNz0.562.dat", space='real', obs_axis=None, Lbox=2500, Ngrid=960, Nbin=480)
